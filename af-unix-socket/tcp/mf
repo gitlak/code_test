@@ -1,0 +1,15 @@
+CFLAGS = -W
+COMPILE = $(CC) $^ $(CFLAGS) -o $@
+
+.PHONY : all
+all : server.bin client.bin
+
+server.bin : server.c
+	$(COMPILE)
+
+client.bin : client.c
+	$(COMPILE)
+
+.PHONY : clean
+clean :
+	-rm *.bin
